@@ -42,11 +42,6 @@
   z-index: 1;
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-  transition: transform 0.3s ease;
-}
-
 .service-card h3 {
   color: #FFF;
   font-feature-settings: 'liga' off, 'clig' off;

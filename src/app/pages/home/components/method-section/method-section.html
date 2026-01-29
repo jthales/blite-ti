@@ -10,7 +10,8 @@
     <div class="method-grid">
       @for (card of methodCards; track card.id) {
         <div class="method-card" [class]="card.gridClass">
-          <div class="method-card-bg" [class]="card.bgClass"></div>
+          <img [src]="card.image" [alt]="card.title" class="method-card-bg" />
+          <div class="method-card-overlay"></div>
           <div class="method-card-content">
             <h3>{{ card.title }}</h3>
             <p class="method-card-description">{{ card.description }}</p>

@@ -63,35 +63,30 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
   transition: all 0.3s ease;
 }
 
-.method-card-bg-1 {
-  background: linear-gradient(135deg, rgba(255, 100, 50, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
-}
-
-.method-card-bg-2 {
-  background: linear-gradient(135deg, rgba(0, 100, 150, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
-}
-
-.method-card-bg-3 {
-  background: linear-gradient(135deg, rgba(150, 50, 200, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
-}
-
-.method-card-bg-4 {
-  background: linear-gradient(135deg, rgba(200, 150, 100, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+.method-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: all 0.3s ease;
 }
 
 .method-card:hover {
   border-radius: 28px;
 }
 
-.method-card:hover .method-card-bg {
+.method-card:hover .method-card-overlay {
   background: linear-gradient(180deg, rgba(255, 41, 147, 0.00) 23.82%, rgba(174, 28, 100, 0.80) 68.09%, #991958 100%);
 }
 
