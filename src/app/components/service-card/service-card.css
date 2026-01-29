@@ -1,0 +1,64 @@
+.service-card {
+  border-radius: 40px;
+  border: 1.167px solid transparent;
+  background: rgba(0, 0, 0, 0.60);
+  padding: 35px 50px;
+  min-height: 363px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-clip: padding-box;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  padding: 1.167px;
+  background: linear-gradient(139deg, rgba(254, 177, 215, 0.60) 3.39%, rgba(138, 56, 245, 0.60) 49.39%, rgba(102, 102, 102, 0.60) 102.03%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.service-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}
+
+.service-card .mb-4 {
+  margin-bottom: 19px;
+}
+
+.service-card h3 {
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 32px */
+  margin-bottom: 14px;
+}
+
+.service-card p {
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
+  margin: 0;
+}
