@@ -151,4 +151,19 @@
   .method-title {
     font-size: 32px;
   }
+
+  /* Aplica estilo de hover permanentemente no mobile */
+  .method-card {
+    border-radius: 28px;
+  }
+
+  .method-card .method-card-overlay {
+    background: linear-gradient(180deg, rgba(255, 41, 147, 0.00) 23.82%, rgba(174, 28, 100, 0.80) 68.09%, #991958 100%);
+  }
+
+  .method-card-description {
+    opacity: 1;
+    max-height: 200px;
+    margin-top: 8px;
+  }
 }
