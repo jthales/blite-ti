@@ -1,4 +1,14 @@
 /* Header component styles */
+header {
+  transition: all 0.3s ease;
+}
+
+header.scrolled .header-nav {
+  background: rgba(21, 21, 21, 0.90);
+  backdrop-filter: blur(4.300000190734863px);
+  -webkit-backdrop-filter: blur(4.300000190734863px);
+}
+
 .header-link {
   color: #FFF;
   font-family: 'Outfit', sans-serif;
