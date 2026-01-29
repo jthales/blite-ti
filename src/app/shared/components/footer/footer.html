@@ -17,6 +17,7 @@
           [href]="contactButton.href"
           [target]="contactButton.external ? '_blank' : '_self'"
           [rel]="contactButton.external ? 'noopener noreferrer' : ''"
+          (click)="!contactButton.external && scrollToSection(contactButton.href, $event)"
           class="contact-button-footer mb-8 inline-flex"
         >
           <span>{{ contactButton.label }}</span>

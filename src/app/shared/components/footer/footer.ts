@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
@@ -13,8 +13,8 @@ export class FooterComponent {
 
   protected readonly contactButton = {
     label: 'Entre em contato',
-    href: 'https://wa.me/5511912294342',
-    external: true
+    href: '#contact',
+    external: false
   };
 
   protected readonly contactInfo = {
@@ -34,4 +34,49 @@ export class FooterComponent {
       href: 'https://www.instagram.com/bliteti/'
     }
   ];
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  scrollToSection(href: string, event?: Event) {
+    if (event) {
+      event.preventDefault();
+    }
+
+    if (!isPlatformBrowser(this.platformId) || href.startsWith('http')) {
+      return;
+    }
+
+    if (href.startsWith('#')) {
+      const elementId = href.substring(1);
+      const element = document.getElementById(elementId);
+
+      if (element) {
+        const headerHeight = 100;
+        const startPosition = window.pageYOffset;
+        const elementPosition = element.getBoundingClientRect().top + startPosition;
+        const targetPosition = Math.max(0, elementPosition - headerHeight);
+        const distance = targetPosition - startPosition;
+        const duration = 800;
+        let start: number | null = null;
+
+        const animateScroll = (timestamp: number) => {
+          if (!start) start = timestamp;
+          const progress = timestamp - start;
+          const progressPercent = Math.min(progress / duration, 1);
+
+          const ease = progressPercent < 0.5
+            ? 2 * progressPercent * progressPercent
+            : 1 - Math.pow(-2 * progressPercent + 2, 2) / 2;
+
+          window.scrollTo(0, startPosition + distance * ease);
+
+          if (progress < duration) {
+            requestAnimationFrame(animateScroll);
+          }
+        };
+
+        requestAnimationFrame(animateScroll);
+      }
+    }
+  }
 }

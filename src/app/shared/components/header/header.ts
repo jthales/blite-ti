@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   protected readonly contactButton = {
     label: 'Entre em contato',
-    href: 'https://wa.me/5511912294342',
-    external: true
+    href: '#contact',
+    external: false
   };
 
   protected isMenuOpen = false;
@@ -54,6 +54,25 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   closeMenu() {
     this.isMenuOpen = false;
+  }
+
+  handleMenuClick(item: { href: string; external: boolean }, event?: Event, closeMenuAfter = false) {
+    if (closeMenuAfter) {
+      this.closeMenu();
+    }
+
+    if (event) {
+      event.preventDefault();
+    }
+
+    if (item.external) {
+      if (isPlatformBrowser(this.platformId)) {
+        window.open(item.href, '_blank', 'noopener');
+      }
+      return;
+    }
+
+    this.scrollToSection(item.href);
   }
 
   scrollToSection(href: string, event?: Event) {
