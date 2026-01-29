@@ -6,10 +6,11 @@ import { ContactFormComponent } from './components/contact-form/contact-form';
 import { ClientsCarouselComponent } from './components/clients-carousel/clients-carousel';
 import { HeroSectionComponent } from './components/hero-section/hero-section';
 import { ServiceCardComponent } from './components/service-card/service-card';
+import { MethodSectionComponent } from './components/method-section/method-section';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, ContactFormComponent, ClientsCarouselComponent, HeroSectionComponent, ServiceCardComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, ContactFormComponent, ClientsCarouselComponent, HeroSectionComponent, ServiceCardComponent, MethodSectionComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,0 +1,117 @@
+/* Method Section - Esboço básico */
+.method-section {
+  background-color: #060506;
+  color: #FFFFFF;
+}
+
+.method-label {
+  color: #F286BB;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.method-title {
+  color: #FFFFFF;
+  font-family: 'Outfit', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-template-areas:
+    "card1 card2 card3"
+    "card4 card4 card3";
+}
+
+.method-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 300px;
+  border: 1px solid rgba(254, 177, 215, 0.3);
+}
+
+.method-card-tall {
+  grid-area: card3;
+  min-height: 620px;
+}
+
+.method-card-wide {
+  grid-area: card4;
+  min-height: 300px;
+}
+
+.method-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+}
+
+.method-card-bg-1 {
+  background: linear-gradient(135deg, rgba(255, 100, 50, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.method-card-bg-2 {
+  background: linear-gradient(135deg, rgba(0, 100, 150, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.method-card-bg-3 {
+  background: linear-gradient(135deg, rgba(150, 50, 200, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.method-card-bg-4 {
+  background: linear-gradient(135deg, rgba(200, 150, 100, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.method-card-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+}
+
+.method-card-content h3 {
+  color: #FFFFFF;
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .method-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4";
+  }
+
+  .method-card-tall,
+  .method-card-wide {
+    min-height: 300px;
+  }
+
+  .method-title {
+    font-size: 32px;
+  }
+}
