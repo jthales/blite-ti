@@ -1,0 +1,18 @@
+# robots.txt para Blite TI
+# https://blite-ti.vercel.app
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://blite-ti.vercel.app/sitemap.xml
+
+# Desabilitar indexação de arquivos de desenvolvimento (se houver)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /.next/
+
+# Permitir todas as páginas públicas
+Allow: /
+Allow: /images/
+Allow: /videos/
