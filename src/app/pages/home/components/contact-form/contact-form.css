@@ -41,36 +41,57 @@
 }
 
 .contact-title {
+  font-feature-settings: 'liga' off, 'clig' off;
   font-family: 'Outfit', sans-serif;
-  color: #FFFFFF;
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: 68.298px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 125%;
+  background: linear-gradient(137deg, #FFF 0%, #F4C3EE 103.05%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin: 0;
   display: flex;
   flex-direction: column;
 }
 
 .contact-title-line {
-  font-size: 64px;
   display: block;
 }
 
 .contact-title-line-large {
-  font-size: 80px;
+  /* Mesmo estilo, herda do pai */
 }
 
 .contact-description {
   font-family: 'Outfit', sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 32px;
+  line-height: 122%;
   margin: 0;
 }
 
-.contact-description strong {
-  color: #F286BB;
-  font-weight: 600;
+.contact-description-a {
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 122%;
+  color: #FFFFFF;
+}
+
+.contact-description-gradient {
+  background: linear-gradient(137deg, #DFDFFE 0%, #FEF4EB 103.05%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 122%;
 }
 
 /* Right Section: Form */
@@ -79,15 +100,44 @@
 }
 
 .contact-form {
-  background: rgba(21, 21, 21, 0.90);
-  backdrop-filter: blur(4.300000190734863px);
-  -webkit-backdrop-filter: blur(4.300000190734863px);
+  position: relative;
   border-radius: 20px;
-  padding: 40px;
-  border: 1px solid rgba(254, 177, 215, 0.2);
+  background: rgba(16, 16, 16, 0.52);
+  padding: 50px 40px;
   display: flex;
   flex-direction: column;
   gap: 32px;
+  border: none;
+}
+
+.contact-form-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(205, 169, 252, 0.4) 0%, rgba(255, 86, 170, 0.4) 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .form-field {
@@ -166,87 +216,91 @@
   margin: 4px 0 0 0;
 }
 
-.form-success {
-  background: rgba(76, 175, 80, 0.2);
-  border: 1px solid rgba(76, 175, 80, 0.5);
-  color: #4CAF50;
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 14px;
+/* Estado de sucesso: ícone e mensagens (substitui o formulário) */
+.form-success-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.form-success-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.form-success-title {
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
   font-family: 'Outfit', sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.form-success-thanks {
+  color: #C5C5C5;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 0;
+}
+
+.form-success-info {
+  color: #C5C5C5;
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 0;
+  max-width: 360px;
 }
 
 .form-submit-btn {
-  position: relative;
   display: flex;
-  width: 538px;
+  width: 100%;
   height: 59px;
   padding: 12px 24px;
   justify-content: center;
   align-items: center;
   gap: 16px;
   border-radius: 4px;
-  border: none;
+  border: 0.5px solid #FEB1D7;
+  background: linear-gradient(90deg, rgba(19, 6, 36, 0.60) 5.45%, rgba(129, 23, 69, 0.60) 98.34%);
+  box-shadow: 0 4px 16px 0 rgba(255, 255, 255, 0.09);
   color: #FFF;
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: 'Outfit', sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 26px; /* 130% */
+  line-height: 26px;
   cursor: pointer;
   transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-/* Camada de fundo 1: Gradiente radial */
-.form-submit-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 4px;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 0, 126, 0.41) 0%, rgba(255, 48, 150, 0.29) 45.67%, rgba(0, 0, 0, 0.14) 100%);
-  box-shadow: 2px 2px 30px 4px rgba(255, 0, 126, 0.19);
-  z-index: 0;
-}
-
-/* Camada de fundo 2: Overlay transparente */
-.form-submit-btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 4px;
-  background: rgba(255, 41, 147, 0.10);
-  box-shadow: 0 4px 16px 0 rgba(255, 255, 255, 0.09);
-  z-index: 1;
-}
-
-/* Conteúdo do botão acima das camadas */
-.form-submit-btn > * {
-  position: relative;
-  z-index: 2;
 }
 
 .form-submit-btn:hover:not(:disabled) {
   border-radius: 4px;
-}
-
-.form-submit-btn:hover:not(:disabled)::before {
-  box-shadow: 1px 4px 28.1px 4px rgba(255, 51, 173, 0.30);
+  background: rgba(255, 41, 147, 0.10);
+  box-shadow: 1px 1px 16px 4px rgba(255, 51, 173, 0.30);
 }
 
 .form-submit-btn:active:not(:disabled) {
   border-radius: 4px;
-}
-
-.form-submit-btn:active:not(:disabled)::before,
-.form-submit-btn:active:not(:disabled)::after {
   background: #FF2993;
   box-shadow: 1px 4px 28.1px 4px rgba(255, 51, 173, 0.30);
 }
@@ -269,39 +323,37 @@
     gap: 40px;
   }
 
-  .contact-title-line {
-    font-size: 48px;
-  }
-
-  .contact-title-line-large {
-    font-size: 64px;
+  .contact-title {
+    font-size: 52px;
   }
 
   .contact-description {
-    font-size: 18px;
+    font-size: 24px;
+  }
+
+  .contact-description-a,
+  .contact-description-gradient {
+    font-size: 24px;
   }
 
   .contact-form {
     padding: 32px 24px;
   }
 
-  .form-submit-btn {
-    width: 100%;
-    max-width: 538px;
-  }
 }
 
 @media (max-width: 640px) {
-  .contact-title-line {
+  .contact-title {
     font-size: 40px;
   }
 
-  .contact-title-line-large {
-    font-size: 56px;
+  .contact-description {
+    font-size: 20px;
   }
 
-  .contact-description {
-    font-size: 16px;
+  .contact-description-a,
+  .contact-description-gradient {
+    font-size: 20px;
   }
 
   .contact-form {
@@ -309,7 +361,4 @@
     gap: 24px;
   }
 
-  .form-submit-btn {
-    width: 100%;
-  }
 }

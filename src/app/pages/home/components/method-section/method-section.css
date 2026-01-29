@@ -37,8 +37,11 @@
   overflow: hidden;
   min-height: 300px;
   border: 1px solid rgba(254, 177, 215, 0.3);
-  transition: all 0.3s ease;
+  transition: border-radius 0.4s ease;
   cursor: pointer;
+  /* Camada própria para o hover não “desgrudar” durante a transição */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .method-card:nth-child(1) {
@@ -68,7 +71,6 @@
   object-fit: cover;
   object-position: center;
   z-index: 0;
-  transition: all 0.3s ease;
 }
 
 .method-card-overlay {
@@ -79,15 +81,24 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1;
-  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.method-card-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 41, 147, 0.00) 23.82%, rgba(174, 28, 100, 0.80) 68.09%, #991958 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .method-card:hover {
   border-radius: 28px;
 }
 
-.method-card:hover .method-card-overlay {
-  background: linear-gradient(180deg, rgba(255, 41, 147, 0.00) 23.82%, rgba(174, 28, 100, 0.80) 68.09%, #991958 100%);
+.method-card:hover .method-card-overlay::after {
+  opacity: 1;
 }
 
 .method-card-content {
@@ -99,7 +110,6 @@
   align-items: flex-start;
   justify-content: flex-end;
   padding: 24px;
-  transition: all 0.3s ease;
 }
 
 .method-card-content h3 {
@@ -110,7 +120,6 @@
   margin: 0 0 12px 0;
   text-align: left;
   width: 100%;
-  transition: all 0.3s ease;
 }
 
 .method-card-description {
@@ -120,16 +129,18 @@
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  margin-top: 8px;
   opacity: 0;
-  max-height: 0;
+  transform: translateY(8px);
+  /* Altura fixa para não animar layout e evitar perda de hover */
+  max-height: 200px;
   overflow: hidden;
-  transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .method-card:hover .method-card-description {
   opacity: 1;
-  max-height: 200px;
-  margin-top: 8px;
+  transform: translateY(0);
 }
 
 /* Responsive */

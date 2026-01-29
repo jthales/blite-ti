@@ -8,102 +8,107 @@
           <span class="contact-title-line contact-title-line-large">Conversar</span>
         </h2>
         <p class="contact-description">
-          Vamos conversar sobre o que a <strong>sua TI</strong> pode <strong>conquistar com mais capacidade e método</strong>.
+          <span class="contact-description-a">A </span><span class="contact-description-gradient">sua TI pode<br>conquistar com mais<br>capacidade e método.</span>
         </p>
       </div>
 
       <!-- Right Section: Contact Form -->
       <div class="contact-form-wrapper">
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form" autocomplete="off">
-          <!-- Nome -->
-          <div class="form-field" [class.has-error]="isFieldInvalid('name')" [class.has-valid]="isFieldValid('name')">
-            <input
-              type="text"
-              formControlName="name"
-              class="form-input"
-              [class.has-error]="isFieldInvalid('name')"
-              [class.has-valid]="isFieldValid('name')"
-              placeholder="Nome*"
-              autocomplete="off"
-              (blur)="markFieldAsTouched('name')"
-            />
-            @if (isFieldInvalid('name')) {
-              <p class="form-error">{{ getErrorMessage('name') }}</p>
-            }
-          </div>
+        <div class="contact-form">
+          @if (!submitSuccess) {
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form-inner" autocomplete="off">
+              <!-- Nome -->
+              <div class="form-field" [class.has-error]="isFieldInvalid('name')" [class.has-valid]="isFieldValid('name')">
+                <input
+                  type="text"
+                  formControlName="name"
+                  class="form-input"
+                  [class.has-error]="isFieldInvalid('name')"
+                  [class.has-valid]="isFieldValid('name')"
+                  placeholder="Nome*"
+                  autocomplete="off"
+                  (blur)="markFieldAsTouched('name')"
+                />
+                @if (isFieldInvalid('name')) {
+                  <p class="form-error">{{ getErrorMessage('name') }}</p>
+                }
+              </div>
 
-          <!-- Email -->
-          <div class="form-field" [class.has-error]="isFieldInvalid('email')" [class.has-valid]="isFieldValid('email')">
-            <input
-              type="email"
-              formControlName="email"
-              class="form-input"
-              [class.has-error]="isFieldInvalid('email')"
-              [class.has-valid]="isFieldValid('email')"
-              placeholder="E-mail*"
-              autocomplete="off"
-              (blur)="markFieldAsTouched('email')"
-            />
-            @if (isFieldInvalid('email')) {
-              <p class="form-error">{{ getErrorMessage('email') }}</p>
-            }
-          </div>
+              <!-- Email -->
+              <div class="form-field" [class.has-error]="isFieldInvalid('email')" [class.has-valid]="isFieldValid('email')">
+                <input
+                  type="email"
+                  formControlName="email"
+                  class="form-input"
+                  [class.has-error]="isFieldInvalid('email')"
+                  [class.has-valid]="isFieldValid('email')"
+                  placeholder="E-mail*"
+                  autocomplete="off"
+                  (blur)="markFieldAsTouched('email')"
+                />
+                @if (isFieldInvalid('email')) {
+                  <p class="form-error">{{ getErrorMessage('email') }}</p>
+                }
+              </div>
 
-          <!-- Empresa -->
-          <div class="form-field" [class.has-error]="isFieldInvalid('company')" [class.has-valid]="isFieldValid('company')">
-            <input
-              type="text"
-              formControlName="company"
-              class="form-input"
-              [class.has-error]="isFieldInvalid('company')"
-              [class.has-valid]="isFieldValid('company')"
-              placeholder="Empresa*"
-              autocomplete="off"
-              (blur)="markFieldAsTouched('company')"
-            />
-            @if (isFieldInvalid('company')) {
-              <p class="form-error">{{ getErrorMessage('company') }}</p>
-            }
-          </div>
+              <!-- Empresa -->
+              <div class="form-field" [class.has-error]="isFieldInvalid('company')" [class.has-valid]="isFieldValid('company')">
+                <input
+                  type="text"
+                  formControlName="company"
+                  class="form-input"
+                  [class.has-error]="isFieldInvalid('company')"
+                  [class.has-valid]="isFieldValid('company')"
+                  placeholder="Empresa*"
+                  autocomplete="off"
+                  (blur)="markFieldAsTouched('company')"
+                />
+                @if (isFieldInvalid('company')) {
+                  <p class="form-error">{{ getErrorMessage('company') }}</p>
+                }
+              </div>
 
-          <!-- Necessidade -->
-          <div class="form-field" [class.has-error]="isFieldInvalid('need')" [class.has-valid]="isFieldValid('need')">
-            <input
-              type="text"
-              formControlName="need"
-              class="form-input"
-              [class.has-error]="isFieldInvalid('need')"
-              [class.has-valid]="isFieldValid('need')"
-              placeholder="Qual a sua necessidade?"
-              autocomplete="off"
-              (blur)="markFieldAsTouched('need')"
-            />
-            @if (isFieldInvalid('need')) {
-              <p class="form-error">{{ getErrorMessage('need') }}</p>
-            }
-          </div>
+              <!-- Necessidade -->
+              <div class="form-field" [class.has-error]="isFieldInvalid('need')" [class.has-valid]="isFieldValid('need')">
+                <input
+                  type="text"
+                  formControlName="need"
+                  class="form-input"
+                  [class.has-error]="isFieldInvalid('need')"
+                  [class.has-valid]="isFieldValid('need')"
+                  placeholder="Qual a sua necessidade?"
+                  autocomplete="off"
+                  (blur)="markFieldAsTouched('need')"
+                />
+                @if (isFieldInvalid('need')) {
+                  <p class="form-error">{{ getErrorMessage('need') }}</p>
+                }
+              </div>
 
-          <!-- Mensagem de Sucesso -->
-          @if (submitSuccess) {
-            <div class="form-success">
-              Mensagem enviada com sucesso! Entraremos em contato em breve.
+              <!-- Botão de Enviar -->
+              <button
+                type="submit"
+                [disabled]="isSubmitting"
+                class="form-submit-btn"
+              >
+                @if (isSubmitting) {
+                  <span>Enviando...</span>
+                } @else {
+                  <span>Enviar</span>
+                  <span class="submit-arrow">→</span>
+                }
+              </button>
+            </form>
+          } @else {
+            <!-- Estado de sucesso: ícone e mensagens -->
+            <div class="form-success-view">
+              <img src="/images/icons/sucesso.svg" alt="" class="form-success-icon" />
+              <h3 class="form-success-title">Recebemos seu formulário</h3>
+              <p class="form-success-thanks">Obrigada pelo contato!</p>
+              <p class="form-success-info">Nossa equipe vai analisar suas informações e retornará em breve.</p>
             </div>
           }
-
-          <!-- Botão de Enviar -->
-          <button
-            type="submit"
-            [disabled]="isSubmitting"
-            class="form-submit-btn"
-          >
-            @if (isSubmitting) {
-              <span>Enviando...</span>
-            } @else {
-              <span>Enviar</span>
-              <span class="submit-arrow">→</span>
-            }
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   </div>

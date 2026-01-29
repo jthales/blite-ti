@@ -1,4 +1,8 @@
-<div class="transition-shadow service-card">
+<div
+  class="transition-shadow service-card"
+  [class.is-visible]="isVisible"
+  [style.backgroundImage]="backgroundImage ? 'url(' + backgroundImage + ')' : ''"
+>
   <div class="service-card-icon">
     <img [src]="icon" [alt]="title" class="w-12 h-12" />
   </div>

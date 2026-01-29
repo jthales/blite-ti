@@ -52,17 +52,20 @@ export class HomeComponent implements OnInit {
     {
       icon: '/images/icons/icone-box-1.svg',
       title: 'Aceleração Ágil e Certeira',
-      description: 'Aumentamos a velocidade e a qualidade das entregas de TI, com foco em resultado e aprendizado contínuo.'
+      description: 'Aumentamos a velocidade e a qualidade das entregas de TI, com foco em resultado e aprendizado contínuo.',
+      backgroundImage: '/images/diffs/diff-1.svg'
     },
     {
       icon: '/images/icons/icone-box-2.svg',
       title: 'Escala Tecnológica Eficiente',
-      description: 'Expandimos sua capacidade com método, governança e visibilidade para escalar sem perder controle.'
+      description: 'Expandimos sua capacidade com método, governança e visibilidade para escalar sem perder controle.',
+      backgroundImage: '/images/diffs/diff-2.svg'
     },
     {
       icon: '/images/icons/icone-box-3.svg',
       title: 'Performance Sustentada',
-      description: 'Garantimos estabilidade, segurança e performance contínua para operações que não podem parar.'
+      description: 'Garantimos estabilidade, segurança e performance contínua para operações que não podem parar.',
+      backgroundImage: '/images/diffs/diff-3.svg'
     }
   ];
 }

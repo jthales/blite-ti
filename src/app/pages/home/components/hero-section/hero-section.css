@@ -1,4 +1,38 @@
 /* Hero Section component styles */
+
+/* Fade in down: começa acima e desce até a posição final */
+@keyframes heroFadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-48px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in up: começa abaixo e sobe até a posição final */
+@keyframes heroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade-in-down {
+  animation: heroFadeInDown 1.2s ease-out forwards;
+}
+
+.hero-fade-in-up {
+  animation: heroFadeInUp 1.2s ease-out 0.25s forwards;
+  opacity: 0;
+}
+
 #home h1 {
   color: #FFF;
   font-family: 'Outfit', sans-serif;

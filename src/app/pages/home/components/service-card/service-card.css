@@ -1,7 +1,10 @@
 .service-card {
   border-radius: 40px;
   border: 1.167px solid transparent;
-  background: rgba(0, 0, 0, 0.60);
+  background-color: rgba(0, 0, 0, 0.60);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
   padding: 35px 50px;
   min-height: 363px;
   height: 100%;
@@ -9,6 +12,14 @@
   flex-direction: column;
   position: relative;
   background-clip: padding-box;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.service-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .service-card-icon {
@@ -35,6 +46,16 @@
   mask-composite: exclude;
   pointer-events: none;
   z-index: 0;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  background: rgba(0, 0, 0, 0.60);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .service-card > * {
@@ -76,6 +97,10 @@
   }
 
   .service-card::before {
+    border-radius: 8px;
+  }
+
+  .service-card::after {
     border-radius: 8px;
   }
 
