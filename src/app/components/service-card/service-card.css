@@ -73,10 +73,15 @@
 @media (max-width: 768px) {
   .service-card {
     min-height: 144px;
-    padding: 16px 20px;
+    padding: 37px 28px;
     flex-direction: row;
     align-items: flex-start;
-    gap: 16px;
+    gap: 12px;
+    border-radius: 8px;
+  }
+
+  .service-card::before {
+    border-radius: 8px;
   }
 
   .service-card-icon {

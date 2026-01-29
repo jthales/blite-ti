@@ -1,0 +1,9 @@
+.services-section {
+  margin-top: 26px;
+}
+
+@media (min-width: 768px) {
+  .services-section {
+    margin-top: 80px;
+  }
+}
