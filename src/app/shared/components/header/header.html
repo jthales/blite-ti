@@ -12,6 +12,7 @@
           [href]="item.href"
           [target]="item.external ? '_blank' : '_self'"
           [rel]="item.external ? 'noopener noreferrer' : ''"
+          (click)="!item.external && scrollToSection(item.href, $event)"
           class="header-link hidden md:block"
         >
           {{ item.label }}
@@ -53,7 +54,7 @@
             [href]="item.href"
             [target]="item.external ? '_blank' : '_self'"
             [rel]="item.external ? 'noopener noreferrer' : ''"
-            (click)="closeMenu()"
+            (click)="closeMenu(); !item.external && scrollToSection(item.href, $event)"
             class="mobile-menu-item block header-link transition-opacity"
           >
             {{ item.label }}
