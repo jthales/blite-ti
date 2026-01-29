@@ -1,31 +1,6 @@
 <div class="min-h-screen flex flex-col" style="background-color: #060506;">
   <app-header></app-header>
-
-  <main class="flex-grow">
-    <app-hero-section></app-hero-section>
-
-    <app-clients-carousel></app-clients-carousel>
-
-    <section id="services" class="py-16 services-section" style="background-color: #060506;">
-      <div class="max-w-[1260px] mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          @for (service of services; track service.title) {
-            <app-service-card
-              [icon]="service.icon"
-              [title]="service.title"
-              [description]="service.description"
-            ></app-service-card>
-          }
-        </div>
-      </div>
-    </section>
-
-    <app-method-section></app-method-section>
-
-    <app-contact-form></app-contact-form>
-  </main>
-
+  <router-outlet />
   <app-footer></app-footer>
 </div>
 
-<router-outlet />

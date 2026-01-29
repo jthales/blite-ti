@@ -87,6 +87,8 @@
   .service-card-icon {
     margin-bottom: 0;
     flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 16px; /* Alinha com a linha inicial do texto secundário */
   }
 
   .service-card-icon img {
@@ -100,6 +102,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    align-items: flex-start;
   }
 
   .service-card h3 {
@@ -111,6 +114,7 @@
     font-weight: 500;
     line-height: 100%; /* 16px */
     margin-bottom: 0;
+    margin-top: 0;
   }
 
   .service-card p {
