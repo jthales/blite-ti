@@ -17,16 +17,4 @@ export class ClientsCarouselComponent {
     { name: 'Cliente 5', logo: '/images/clients/client-5.svg' },
     { name: 'Cliente 6', logo: '/images/clients/client-6.svg' }
   ];
-
-  protected currentIndex = 0;
-
-  nextSlide() {
-    const maxIndex = this.clients.length - 3; // Mostra 3 no mobile
-    this.currentIndex = (this.currentIndex + 1) % (maxIndex + 1);
-  }
-
-  prevSlide() {
-    const maxIndex = this.clients.length - 3;
-    this.currentIndex = this.currentIndex === 0 ? maxIndex : this.currentIndex - 1;
-  }
 }

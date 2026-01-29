@@ -69,4 +69,16 @@ export class ContactFormComponent {
     const control = this.contactForm.get(fieldName);
     return !!(control && control.invalid && control.touched);
   }
+
+  isFieldValid(fieldName: string): boolean {
+    const control = this.contactForm.get(fieldName);
+    return !!(control && control.valid && control.touched);
+  }
+
+  markFieldAsTouched(fieldName: string) {
+    const control = this.contactForm.get(fieldName);
+    if (control) {
+      control.markAsTouched();
+    }
+  }
 }

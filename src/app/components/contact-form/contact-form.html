@@ -14,15 +14,18 @@
 
       <!-- Right Section: Contact Form -->
       <div class="contact-form-wrapper">
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form" autocomplete="off">
           <!-- Nome -->
-          <div class="form-field">
+          <div class="form-field" [class.has-error]="isFieldInvalid('name')" [class.has-valid]="isFieldValid('name')">
             <input
               type="text"
-              id="name"
               formControlName="name"
               class="form-input"
+              [class.has-error]="isFieldInvalid('name')"
+              [class.has-valid]="isFieldValid('name')"
               placeholder="Nome*"
+              autocomplete="off"
+              (blur)="markFieldAsTouched('name')"
             />
             @if (isFieldInvalid('name')) {
               <p class="form-error">{{ getErrorMessage('name') }}</p>
@@ -30,13 +33,16 @@
           </div>
 
           <!-- Email -->
-          <div class="form-field">
+          <div class="form-field" [class.has-error]="isFieldInvalid('email')" [class.has-valid]="isFieldValid('email')">
             <input
               type="email"
-              id="email"
               formControlName="email"
               class="form-input"
+              [class.has-error]="isFieldInvalid('email')"
+              [class.has-valid]="isFieldValid('email')"
               placeholder="E-mail*"
+              autocomplete="off"
+              (blur)="markFieldAsTouched('email')"
             />
             @if (isFieldInvalid('email')) {
               <p class="form-error">{{ getErrorMessage('email') }}</p>
@@ -44,13 +50,16 @@
           </div>
 
           <!-- Empresa -->
-          <div class="form-field">
+          <div class="form-field" [class.has-error]="isFieldInvalid('company')" [class.has-valid]="isFieldValid('company')">
             <input
               type="text"
-              id="company"
               formControlName="company"
               class="form-input"
+              [class.has-error]="isFieldInvalid('company')"
+              [class.has-valid]="isFieldValid('company')"
               placeholder="Empresa*"
+              autocomplete="off"
+              (blur)="markFieldAsTouched('company')"
             />
             @if (isFieldInvalid('company')) {
               <p class="form-error">{{ getErrorMessage('company') }}</p>
@@ -58,13 +67,16 @@
           </div>
 
           <!-- Necessidade -->
-          <div class="form-field">
+          <div class="form-field" [class.has-error]="isFieldInvalid('need')" [class.has-valid]="isFieldValid('need')">
             <input
               type="text"
-              id="need"
               formControlName="need"
               class="form-input"
+              [class.has-error]="isFieldInvalid('need')"
+              [class.has-valid]="isFieldValid('need')"
               placeholder="Qual a sua necessidade?"
+              autocomplete="off"
+              (blur)="markFieldAsTouched('need')"
             />
             @if (isFieldInvalid('need')) {
               <p class="form-error">{{ getErrorMessage('need') }}</p>
