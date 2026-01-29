@@ -47,14 +47,14 @@
 
     <!-- Mobile Menu -->
     @if (isMenuOpen) {
-      <div class="md:hidden mt-4 bg-[#31313199] rounded-2xl px-6 py-4 space-y-2">
+      <div class="mobile-menu md:hidden mt-4 px-6 py-4">
         @for (item of menuItems; track item.href) {
           <a
             [href]="item.href"
             [target]="item.external ? '_blank' : '_self'"
             [rel]="item.external ? 'noopener noreferrer' : ''"
             (click)="closeMenu()"
-            class="block py-2 header-link transition-opacity"
+            class="mobile-menu-item block header-link transition-opacity"
           >
             {{ item.label }}
           </a>
@@ -64,7 +64,7 @@
           [target]="contactButton.external ? '_blank' : '_self'"
           [rel]="contactButton.external ? 'noopener noreferrer' : ''"
           (click)="closeMenu()"
-          class="contact-button block text-center mt-2"
+          class="mobile-menu-item contact-button block text-center"
         >
           <span>{{ contactButton.label }}</span>
           <img src="/images/icons/arrow.svg" alt="" class="contact-arrow" />

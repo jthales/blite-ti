@@ -1,1 +1,40 @@
 /* Hero Section component styles */
+#home h1 {
+  color: #FFF;
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#home h2 {
+  color: #FFF;
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  #home h1 {
+    font-size: 32px;
+  }
+
+  #home h2 {
+    font-size: 16px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  #home h1 {
+    font-size: 64px;
+    line-height: 1.2;
+  }
+
+  #home h2 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}
