@@ -1,0 +1,20 @@
+/* Contact form component styles */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+input,
+textarea {
+  color: #FFFFFF !important;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #F286BB !important;
+  --tw-ring-color: #F286BB !important;
+}
+
+.contact-submit-btn:hover {
+  background-color: #e075a8 !important;
+}

@@ -1,0 +1,35 @@
+<section class="clients-section">
+  <div class="clients-container">
+    <!-- Desktop: Mostra 6 clientes sem carrossel -->
+    <div class="clients-grid-desktop">
+      @for (client of clients.slice(0, 6); track client.name) {
+        <div class="client-item">
+          <img [src]="client.logo" [alt]="client.name" class="client-logo" />
+        </div>
+      }
+    </div>
+
+    <!-- Mobile: Mostra 3 clientes com carrossel -->
+    <div class="clients-carousel-mobile">
+      <button class="carousel-btn prev-btn" (click)="prevSlide()" aria-label="Anterior">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <div class="carousel-track" [style.transform]="'translateX(-' + (currentIndex * 100 / 3) + '%)'">
+        @for (client of clients; track client.name) {
+          <div class="carousel-slide">
+            <img [src]="client.logo" [alt]="client.name" class="client-logo" />
+          </div>
+        }
+      </div>
+
+      <button class="carousel-btn next-btn" (click)="nextSlide()" aria-label="Próximo">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>

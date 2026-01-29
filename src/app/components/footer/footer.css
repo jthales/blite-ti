@@ -1,0 +1,56 @@
+/* Footer component styles */
+.contact-button-footer {
+  color: #FFF;
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 40px;
+  background: rgba(17, 16, 16, 0.67);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 9px 14px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.contact-button-footer:hover {
+  opacity: 0.8;
+}
+
+.contact-arrow {
+  width: auto;
+  height: 16px;
+  display: inline-block;
+}
+
+.footer-contact-link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.footer-contact-link:hover {
+  color: #F286BB !important;
+}
+
+.footer-social-link {
+  color: #FFFFFF;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.footer-social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #F286BB;
+}

@@ -1,0 +1,67 @@
+<footer class="mt-auto relative overflow-hidden" style="background-color: #060506; color: #FFFFFF;">
+  <!-- Imagem de fundo -->
+  <div class="absolute inset-0 z-0">
+    <img src="/images/footer-image.svg" alt="" class="w-full h-full object-cover opacity-30" />
+  </div>
+
+  <div class="relative z-10 max-w-[1260px] mx-auto px-4 py-16">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+      <!-- Conteúdo Principal -->
+      <div class="flex-1">
+        <h2 class="text-4xl md:text-5xl font-bold mb-8" style="color: #FFFFFF;">
+          Fale com a Blite
+        </h2>
+
+        <!-- Botão Entre em contato -->
+        <a
+          [href]="contactButton.href"
+          [target]="contactButton.external ? '_blank' : '_self'"
+          [rel]="contactButton.external ? 'noopener noreferrer' : ''"
+          class="contact-button-footer mb-8 inline-flex"
+        >
+          <span>{{ contactButton.label }}</span>
+          <img src="/images/icons/arrow.svg" alt="" class="contact-arrow" />
+        </a>
+
+        <!-- Informações de Contato -->
+        <div class="space-y-4 mt-8">
+          <div class="flex items-start">
+            <svg class="w-5 h-5 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #FFFFFF;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <a href="mailto:{{ contactInfo.email }}" class="footer-contact-link" style="color: #FFFFFF;">
+              {{ contactInfo.email }}
+            </a>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-start flex-1">
+              <svg class="w-5 h-5 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #FFFFFF;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <p class="footer-contact-link" style="color: #FFFFFF;">
+                {{ contactInfo.address }}
+              </p>
+            </div>
+            <!-- Redes Sociais -->
+            <div class="flex gap-4 ml-6">
+              @for (social of socialLinks; track social.name) {
+                <a
+                  [href]="social.href"
+                  [title]="social.name"
+                  class="footer-social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path [attr.d]="social.icon" />
+                  </svg>
+                </a>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

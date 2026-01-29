@@ -1,0 +1,75 @@
+<header class="fixed top-0 left-0 right-0 z-50 py-4 px-4">
+  <nav class="max-w-[1260px] mx-auto">
+    <div class="flex items-center justify-between bg-[#31313199] rounded-2xl px-6 py-4">
+      <!-- Logo -->
+      <a href="#home" class="hover:opacity-80 transition-opacity">
+        <img src="/images/logo.webp" alt="Blite TI" class="h-8 w-auto" />
+      </a>
+
+      <!-- Desktop Menu Items -->
+      @for (item of menuItems; track item.href) {
+        <a
+          [href]="item.href"
+          [target]="item.external ? '_blank' : '_self'"
+          [rel]="item.external ? 'noopener noreferrer' : ''"
+          class="header-link hidden md:block"
+        >
+          {{ item.label }}
+        </a>
+      }
+
+      <!-- Contact Button -->
+      <a
+        [href]="contactButton.href"
+        [target]="contactButton.external ? '_blank' : '_self'"
+        [rel]="contactButton.external ? 'noopener noreferrer' : ''"
+        class="contact-button hidden md:flex"
+      >
+        <span>{{ contactButton.label }}</span>
+        <img src="/images/icons/arrow.svg" alt="" class="contact-arrow" />
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button
+        (click)="toggleMenu()"
+        class="md:hidden text-white hover:opacity-80 focus:outline-none transition-opacity"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          @if (!isMenuOpen) {
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          } @else {
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          }
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    @if (isMenuOpen) {
+      <div class="md:hidden mt-4 bg-[#31313199] rounded-2xl px-6 py-4 space-y-2">
+        @for (item of menuItems; track item.href) {
+          <a
+            [href]="item.href"
+            [target]="item.external ? '_blank' : '_self'"
+            [rel]="item.external ? 'noopener noreferrer' : ''"
+            (click)="closeMenu()"
+            class="block py-2 header-link transition-opacity"
+          >
+            {{ item.label }}
+          </a>
+        }
+        <a
+          [href]="contactButton.href"
+          [target]="contactButton.external ? '_blank' : '_self'"
+          [rel]="contactButton.external ? 'noopener noreferrer' : ''"
+          (click)="closeMenu()"
+          class="contact-button block text-center mt-2"
+        >
+          <span>{{ contactButton.label }}</span>
+          <img src="/images/icons/arrow.svg" alt="" class="contact-arrow" />
+        </a>
+      </div>
+    }
+  </nav>
+</header>
