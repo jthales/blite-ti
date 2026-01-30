@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, OnDestroy, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy, PLATFORM_ID, Inject, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -24,7 +24,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   protected isMenuOpen = false;
   protected isScrolled = false;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private readonly elementRef: ElementRef<HTMLElement>
+  ) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -41,6 +44,21 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       this.checkScroll();
     }
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    if (!this.isMenuOpen || !isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const target = event.target as Node | null;
+    const root = this.elementRef.nativeElement;
+    if (target && root.contains(target)) {
+      return;
+    }
+
+    this.closeMenu();
   }
 
   private checkScroll() {

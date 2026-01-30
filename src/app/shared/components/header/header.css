@@ -81,7 +81,7 @@ header.scrolled .header-nav {
 }
 
 .mobile-menu-item {
-  margin-bottom: 80px;
+  margin-bottom: 36px;
 }
 
 .mobile-menu-item:last-child {
@@ -92,6 +92,8 @@ header.scrolled .header-nav {
 @media (max-width: 767px) {
   header {
     position: relative !important;
+    padding-top: 40px !important;
+    padding-left: 40px !important;
   }
 
   .header-nav {
@@ -108,7 +110,7 @@ header.scrolled .header-nav {
 
   .mobile-menu-button {
     position: fixed;
-    top: 16px;
+    top: 32px;
     right: 16px;
     z-index: 60;
     width: 44px;

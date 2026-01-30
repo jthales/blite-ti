@@ -3,11 +3,11 @@
   [class.is-visible]="isVisible"
   [style.backgroundImage]="backgroundImage ? 'url(' + backgroundImage + ')' : ''"
 >
-  <div class="service-card-icon">
+  <div class="service-card-icon service-card-animate-down" [class.is-visible]="isVisible">
     <img [src]="icon" [alt]="title" class="w-12 h-12" />
   </div>
   <div class="service-card-content">
-    <h3>{{ title }}</h3>
-    <p>{{ description }}</p>
+    <h3 class="service-card-animate-down" [class.is-visible]="isVisible">{{ title }}</h3>
+    <p class="service-card-animate-up" [class.is-visible]="isVisible">{{ description }}</p>
   </div>
 </div>

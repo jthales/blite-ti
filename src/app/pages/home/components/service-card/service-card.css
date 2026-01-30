@@ -12,14 +12,6 @@
   flex-direction: column;
   position: relative;
   background-clip: padding-box;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.service-card.is-visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .service-card-icon {
@@ -63,6 +55,41 @@
   z-index: 1;
 }
 
+@keyframes serviceFadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-48px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes serviceFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card-animate-down,
+.service-card-animate-up {
+  opacity: 0;
+}
+
+.service-card-animate-down.is-visible {
+  animation: serviceFadeInDown 1.2s ease-out forwards;
+}
+
+.service-card-animate-up.is-visible {
+  animation: serviceFadeInUp 1.2s ease-out 0.25s forwards;
+}
+
 .service-card h3 {
   color: #FFF;
   font-feature-settings: 'liga' off, 'clig' off;
@@ -80,7 +107,7 @@
   font-family: 'Outfit', sans-serif;
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 150%; /* 30px */
   margin: 0;
 }
@@ -143,7 +170,7 @@
     font-family: 'Outfit', sans-serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 150%; /* 18px */
     margin: 0;
     margin-top: 26px;

@@ -33,7 +33,7 @@
 
       <!-- Mobile Menu Button -->
       <button
-        (click)="toggleMenu()"
+        (click)="$event.stopPropagation(); toggleMenu()"
         class="mobile-menu-button md:hidden text-white hover:opacity-80 focus:outline-none transition-opacity"
         aria-label="Toggle menu"
       >
@@ -49,7 +49,7 @@
 
     <!-- Mobile Menu -->
     @if (isMenuOpen) {
-      <div class="mobile-menu md:hidden mt-4 px-6 py-4">
+      <div class="mobile-menu md:hidden mt-4 px-6 py-4" (click)="$event.stopPropagation()">
         @for (item of menuItems; track item.href) {
           <a
             [href]="item.href"

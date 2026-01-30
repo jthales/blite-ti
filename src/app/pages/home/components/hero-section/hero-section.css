@@ -55,6 +55,10 @@
     height: min(568px, calc(100vh - 115px)) !important;
   }
 
+  #home .hero-content {
+    padding-left: 40px;
+  }
+
   #home h1 {
     font-size: 32px;
   }
