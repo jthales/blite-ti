@@ -17,6 +17,11 @@
             <img [src]="client.logo" [alt]="client.name" class="client-logo" />
           </div>
         }
+        @for (client of clients; track client.name + '-dup') {
+          <div class="carousel-slide" aria-hidden="true">
+            <img [src]="client.logo" [alt]="client.name" class="client-logo" />
+          </div>
+        }
       </div>
     </div>
   </div>
