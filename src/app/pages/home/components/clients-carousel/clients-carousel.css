@@ -99,36 +99,7 @@
   }
 
   .carousel-track {
-    animation: clientsScroll 20s linear infinite;
-    -webkit-animation: clientsScroll 20s linear infinite;
     will-change: transform;
-  }
-
-  .carousel-track:hover {
-    animation-play-state: running;
-    -webkit-animation-play-state: running;
-  }
-}
-
-@keyframes clientsScroll {
-  0% {
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-  }
-}
-
-@-webkit-keyframes clientsScroll {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
   }
 }
 
