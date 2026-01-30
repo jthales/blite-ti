@@ -71,6 +71,14 @@
   margin: 0;
 }
 
+.contact-description-desktop {
+  display: inline;
+}
+
+.contact-description-mobile {
+  display: none;
+}
+
 .contact-description-a {
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: 'Outfit', sans-serif;
@@ -343,8 +351,16 @@
 }
 
 @media (max-width: 640px) {
+  .contact-container {
+    gap: 62px;
+  }
+
+  .contact-section {
+    padding-top: 24px !important;
+  }
+
   .contact-title {
-    font-size: 40px;
+    display: none;
   }
 
   .contact-description {
@@ -354,6 +370,14 @@
   .contact-description-a,
   .contact-description-gradient {
     font-size: 20px;
+  }
+
+  .contact-description-desktop {
+    display: none;
+  }
+
+  .contact-description-mobile {
+    display: inline;
   }
 
   .contact-form {

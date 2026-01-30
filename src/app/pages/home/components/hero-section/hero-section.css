@@ -51,6 +51,10 @@
 
 /* Mobile styles */
 @media (max-width: 767px) {
+  #home {
+    height: min(568px, calc(100vh - 115px)) !important;
+  }
+
   #home h1 {
     font-size: 32px;
   }

@@ -108,7 +108,7 @@
     margin-bottom: 0;
     flex-shrink: 0;
     align-self: flex-start;
-    margin-top: 16px; /* Alinha com a linha inicial do texto secundário */
+    margin-top: 0; /* Alinha com a linha do título */
   }
 
   .service-card-icon img {
@@ -121,7 +121,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0;
     align-items: flex-start;
   }
 
@@ -129,9 +129,9 @@
     color: #FFF;
     font-feature-settings: 'liga' off, 'clig' off;
     font-family: 'Outfit', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 100%; /* 16px */
     margin-bottom: 0;
     margin-top: 0;
@@ -141,10 +141,12 @@
     color: #FFF;
     font-feature-settings: 'liga' off, 'clig' off;
     font-family: 'Outfit', sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 18px */
     margin: 0;
+    margin-top: 26px;
+    margin-left: -40px;
   }
 }
