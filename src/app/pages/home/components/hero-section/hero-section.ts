@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './hero-section.css'
 })
 export class HeroSectionComponent {
-  protected readonly videoSrc = '/videos/video-novo.mov';
+  protected readonly videoSrc = '/videos/video_topo.mov';
 }
