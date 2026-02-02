@@ -52,12 +52,8 @@ export class ContactFormComponent {
 
   getErrorMessage(fieldName: string): string {
     const control = this.contactForm.get(fieldName);
-    if (control?.hasError('required')) {
-      return 'Este campo é obrigatório';
-    }
-    if (control?.hasError('email')) {
-      return 'Email inválido';
-    }
+    if (control?.hasError('required')) return 'Este campo é obrigatório';
+    if (control?.hasError('email')) return 'Email inválido';
     if (control?.hasError('minlength')) {
       const minLength = control.errors?.['minlength'].requiredLength;
       return `Mínimo de ${minLength} caracteres`;
