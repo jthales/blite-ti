@@ -1,18 +1,15 @@
 <section id="home" class="relative w-full overflow-hidden bg-black" style="height: calc(100vh - 115px);">
   <!-- Video de fundo -->
   <video
-    #heroVideo
     [src]="videoSrc"
     type="video/quicktime"
-    [muted]="true"
-    [autoplay]="true"
-    [loop]="true"
+    autoplay
+    loop
+    muted
     playsinline
     webkit-playsinline
-    [attr.disablepictureinpicture]="true"
-    [attr.controls]="false"
-    [attr.controlslist]="'nodownload noplaybackrate noremoteplayback'"
-    [attr.preload]="'auto'"
+    disablepictureinpicture
+    controlslist="nodownload noplaybackrate noremoteplayback"
     class="hero-video absolute top-0 left-0 w-full h-full object-cover z-0"
   >
     Seu navegador não suporta o elemento de vídeo.
